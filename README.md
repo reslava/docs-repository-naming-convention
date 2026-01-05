@@ -274,9 +274,14 @@ After renaming on GitHub, update your local clone to reflect the new URL:
 - **Pre-commit Hook**: Warn about non-compliant project folders
 
 #### 4. **Create Compliance Badges**
+Add this to your repo:
+[![Naming Convention](https://img.shields.io/badge/naming-compliant-green.svg)](https://github.com/reslava/docs-repository-naming-convention) with this code:
+
 ```markdown
-[![Naming Convention](https://img.shields.io/badge/naming-compliant-green.svg)](your-repo-url)
+[![Naming Convention](https://img.shields.io/badge/naming-compliant-green.svg)](https://github.com/reslava/docs-repository-naming-convention)
 ```
+
+
 - People love badges - make compliance visible and rewarding
 
 #### 5. **Documentation and Education**
