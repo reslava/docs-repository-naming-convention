@@ -283,7 +283,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 ## Roadmap
 
 - [ ] Release v1.0 of the convention
-- [ ] Build web-based name generator tool
+- ✅ Build web-based name generator tool
 - [ ] Create GitHub Action validator
 - [ ] Publish npm package for CLI validation
 - [ ] Develop VS Code extension
