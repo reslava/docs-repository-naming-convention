@@ -377,9 +377,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## Community
 
-- **GitHub Discussions**: [Ask questions and share ideas](https://github.com/your-username/docs-repository-naming-convention/discussions)
+- **GitHub Discussions**: [Ask questions and share ideas](https://github.com/reslava/docs-repository-naming-convention/discussions)
 - **Discord**: [Join our community](#) (coming soon)
-- **Twitter**: Follow [@repo_naming](#) for updates
 
 ---
 
