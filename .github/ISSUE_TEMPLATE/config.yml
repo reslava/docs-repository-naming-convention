@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/reslava/docs-repository-naming-convention/discussions
+    about: Ask questions, share ideas, or discuss the convention with the community
+  - name: 🌐 Discord Community
+    url: https://discord.gg/reslava-invite
+    about: Join our Discord for real-time chat and community support (coming soon)
+  - name: 📖 Read Documentation
+    url: https://reslava.github.io/docs-repository-naming-convention/
+    about: Check out our comprehensive guide and web-based name generator
+  - name: ⭐ Show Your Support
+    url: https://github.com/reslava/docs-repository-naming-convention
+    about: Star the repository if you find this convention helpful!

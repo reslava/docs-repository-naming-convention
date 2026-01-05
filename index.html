@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Naming Convention Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-8 px-4">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Repository Name Generator</h1>
+            <p class="text-gray-600">Create standardized repository names following best practices</p>
+            <div class="mt-4">
+                <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+                    Format: {prefix-}type-{language/framework-}project{-tag}
+                </span>
+            </div>
+        </div>
+
+        <!-- Main Card -->
+        <div class="bg-white rounded-lg shadow-xl p-8 mb-6">
+            <!-- Input Form -->
+            <div class="space-y-6">
+                <!-- Prefix -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Prefix <span class="text-gray-400">(optional)</span>
+                    </label>
+                    <select id="prefix" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">None</option>
+                        <option value="archived">archived - Historical/reference</option>
+                        <option value="demo">demo - Demonstration project</option>
+                        <option value="experimental">experimental - R&D project</option>
+                        <option value="fork">fork - Forked repository</option>
+                        <option value="poc">poc - Proof of concept</option>
+                        <option value="study">study - Learning/educational project</option>
+                        <option value="template">template - Reusable template</option>
+                    </select>
+                </div>
+
+                <!-- Type -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Type <span class="text-red-500">*</span>
+                    </label>
+                    <select id="type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">Select type...</option>
+                        <option value="api">api - API service</option>
+                        <option value="bot">bot - Bot application</option>
+                        <option value="cli">cli - Command-line tool</option>
+                        <option value="config">config - Configuration files</option>
+                        <option value="course">course - Course materials</option>
+                        <option value="desktop">desktop - Desktop app</option>
+                        <option value="docs">docs - Documentation</option>
+                        <option value="game">game - Game project</option>
+                        <option value="infra">infra - Infrastructure as Code</option>
+                        <option value="lib">lib - Library/package</option>
+                        <option value="microservices">microservices - Microservices</option>
+                        <option value="mobile">mobile - Mobile app</option>
+                        <option value="plugin">plugin - Plugin/extension</option>
+                        <option value="saas">saas - SaaS application</option>
+                        <option value="script">script - Utility script</option>
+                        <option value="theme">theme - Theme/styling</option>
+                        <option value="tutorial">tutorial - Tutorial implementation</option>
+                        <option value="web">web - Web application</option>
+                    </select>
+                </div>
+
+                <!-- Language/Framework -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Language/Framework <span class="text-gray-400">(optional)</span>
+                    </label>
+                    <select id="language" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">None</option>
+                        <option value="angular">angular - Angular</option>
+                        <option value="ansible">ansible - Ansible</option>
+                        <option value="aspnet">aspnet - ASP.NET</option>
+                        <option value="csharp">csharp - C#</option>
+                        <option value="dart">dart - Dart</option>
+                        <option value="django">django - Django</option>
+                        <option value="express">express - Express.js</option>
+                        <option value="fastapi">fastapi - FastAPI</option>
+                        <option value="flask">flask - Flask</option>
+                        <option value="flutter">flutter - Flutter</option>
+                        <option value="go">go - Go/Golang</option>
+                        <option value="java">java - Java</option>
+                        <option value="javascript">javascript - JavaScript</option>
+                        <option value="kotlin">kotlin - Kotlin</option>
+                        <option value="laravel">laravel - Laravel</option>
+                        <option value="net">net - .NET</option>
+                        <option value="nextjs">nextjs - Next.js</option>
+                        <option value="node">node - Node.js</option>
+                        <option value="nuxt">nuxt - Nuxt.js</option>
+                        <option value="php">php - PHP</option>
+                        <option value="python">python - Python</option>
+                        <option value="rails">rails - Ruby on Rails</option>
+                        <option value="react">react - React</option>
+                        <option value="ruby">ruby - Ruby</option>
+                        <option value="rust">rust - Rust</option>
+                        <option value="shell">shell - Shell scripts</option>
+                        <option value="spring">spring - Spring</option>
+                        <option value="svelte">svelte - Svelte</option>
+                        <option value="swift">swift - Swift</option>
+                        <option value="terraform">terraform - Terraform</option>
+                        <option value="typescript">typescript - TypeScript</option>
+                        <option value="unity">unity - Unity</option>
+                        <option value="vue">vue - Vue.js</option>
+                    </select>
+                </div>
+
+                <!-- Project Name -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Project Name <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="project" 
+                        placeholder="e.g., user-authentication, todo-app, data-validator"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                    <p class="mt-1 text-sm text-gray-500">Use lowercase with hyphens. Be descriptive but concise (1-3 words).</p>
+                </div>
+
+                <!-- Tag -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Tag <span class="text-gray-400">(optional)</span>
+                    </label>
+                    <select id="tag" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">None</option>
+                        <option value="abandoned">abandoned - Discontinued</option>
+                        <option value="archived">archived - Read-only</option>
+                        <option value="beta">beta - Beta version</option>
+                        <option value="deprecated">deprecated - Replaced</option>
+                        <option value="legacy">legacy - Old version</option>
+                        <option value="wip">wip - Work in progress</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Generated Name -->
+            <div class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border-2 border-blue-200">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Generated Repository Name:</label>
+                <div class="flex items-center gap-2">
+                    <input 
+                        type="text" 
+                        id="result" 
+                        readonly 
+                        value="Fill in the required fields above"
+                        class="flex-1 px-4 py-3 bg-white border-2 border-gray-300 rounded-lg text-lg font-mono text-gray-800"
+                    >
+                    <button 
+                        id="copyBtn" 
+                        class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:bg-gray-400 disabled:cursor-not-allowed"
+                        disabled
+                    >
+                        Copy
+                    </button>
+                </div>
+                <div id="validation" class="mt-3"></div>
+            </div>
+
+            <!-- Examples -->
+            <div class="mt-6">
+                <button 
+                    id="toggleExamples" 
+                    class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                >
+                    Show Examples →
+                </button>
+                <div id="examples" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 mb-2">Good Examples:</h3>
+                    <ul class="space-y-1 text-sm text-gray-700 font-mono">
+                        <li class="cursor-pointer hover:text-blue-600" onclick="loadExample('study', 'course', 'react', 'todo-app', '')">• study-course-react-todo-app</li>
+                        <li class="cursor-pointer hover:text-blue-600" onclick="loadExample('', 'docs', '', 'api-reference', '')">• docs-api-reference</li>
+                        <li class="cursor-pointer hover:text-blue-600" onclick="loadExample('', 'api', 'aspnet', 'user-service', '')">• aspnet-api-user-service</li>
+                        <li class="cursor-pointer hover:text-blue-600" onclick="loadExample('', 'lib', 'python', 'data-validation', '')">• lib-python-data-validation</li>
+                        <li class="cursor-pointer hover:text-blue-600" onclick="loadExample('', 'cli', 'go', 'deployment-tool', '')">• cli-go-deployment-tool</li>
+                        <li class="cursor-pointer hover:text-blue-600" onclick="loadExample('poc', 'microservices', 'node', 'auth-service', 'wip')">• poc-microservices-node-auth-service-wip</li>
+                    </ul>
+                    <p class="mt-2 text-xs text-gray-500">Click any example to load it in the generator</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Guide -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Quick Guide</h2>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <h3 class="font-semibold text-gray-700 mb-2">✅ Best Practices:</h3>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>• Use lowercase only</li>
+                        <li>• Separate words with hyphens</li>
+                        <li>• Keep it 3-5 words total</li>
+                        <li>• Be descriptive yet concise</li>
+                        <li>• Avoid special characters</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-700 mb-2">❌ Avoid:</h3>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>• Version numbers in name</li>
+                        <li>• Underscores or spaces</li>
+                        <li>• PascalCase or camelCase</li>
+                        <li>• Generic names (app, project)</li>
+                        <li>• Personal names</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-8 text-gray-600 text-sm">
+            <p>Made with ❤️ for better repository organization</p>
+            <p class="mt-2">
+                <a href="https://github.com/your-username/docs-repository-naming-convention" class="text-blue-600 hover:text-blue-800">View Convention on GitHub →</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const prefix = document.getElementById('prefix');
+        const type = document.getElementById('type');
+        const language = document.getElementById('language');
+        const project = document.getElementById('project');
+        const tag = document.getElementById('tag');
+        const result = document.getElementById('result');
+        const copyBtn = document.getElementById('copyBtn');
+        const validation = document.getElementById('validation');
+        const toggleExamples = document.getElementById('toggleExamples');
+        const examples = document.getElementById('examples');
+
+        function generateName() {
+            const parts = [];
+            
+            if (prefix.value) parts.push(prefix.value);
+            if (type.value) parts.push(type.value);
+            if (language.value) parts.push(language.value);
+            if (project.value.trim()) parts.push(project.value.trim().toLowerCase().replace(/\s+/g, '-'));
+            if (tag.value) parts.push(tag.value);
+
+            const name = parts.join('-');
+            
+            if (type.value && project.value.trim()) {
+                result.value = name;
+                copyBtn.disabled = false;
+                validateName(name);
+            } else {
+                result.value = 'Fill in the required fields above';
+                copyBtn.disabled = true;
+                validation.innerHTML = '';
+            }
+        }
+
+        function validateName(name) {
+            const issues = [];
+            const wordCount = name.split('-').length;
+            
+            // Check word count (flexible with prefix/tag)
+            const hasPrefix = prefix.value !== '';
+            const hasTag = tag.value !== '';
+            const maxWords = hasPrefix || hasTag ? 7 : 5;
+            
+            if (wordCount > maxWords) {
+                issues.push('Consider shortening (currently ' + wordCount + ' words, recommended max ' + maxWords + ')');
+            }
+            
+            // Check for invalid characters
+            if (!/^[a-z0-9-]+$/.test(name)) {
+                issues.push('Contains invalid characters (use only lowercase letters, numbers, and hyphens)');
+            }
+            
+            // Check for consecutive hyphens
+            if (name.includes('--')) {
+                issues.push('Contains consecutive hyphens');
+            }
+            
+            // Check if starts or ends with hyphen
+            if (name.startsWith('-') || name.endsWith('-')) {
+                issues.push('Should not start or end with hyphen');
+            }
+
+            if (issues.length > 0) {
+                validation.innerHTML = '<div class="text-yellow-700 text-sm fade-in"><strong>⚠️ Warnings:</strong><ul class="list-disc ml-5 mt-1">' + 
+                    issues.map(i => '<li>' + i + '</li>').join('') + '</ul></div>';
+            } else {
+                validation.innerHTML = '<div class="text-green-700 text-sm fade-in">✓ Looks good! This name follows the convention.</div>';
+            }
+        }
+
+        function loadExample(p, t, l, pr, tg) {
+            prefix.value = p;
+            type.value = t;
+            language.value = l;
+            project.value = pr;
+            tag.value = tg;
+            generateName();
+        }
+
+        [prefix, type, language, project, tag].forEach(el => {
+            el.addEventListener('change', generateName);
+            el.addEventListener('input', generateName);
+        });
+
+        copyBtn.addEventListener('click', () => {
+            result.select();
+            document.execCommand('copy');
+            
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            copyBtn.classList.add('bg-green-600');
+            copyBtn.classList.remove('bg-blue-600');
+            
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+                copyBtn.classList.remove('bg-green-600');
+                copyBtn.classList.add('bg-blue-600');
+            }, 2000);
+        });
+
+        toggleExamples.addEventListener('click', () => {
+            examples.classList.toggle('hidden');
+            toggleExamples.textContent = examples.classList.contains('hidden') 
+                ? 'Show Examples →' 
+                : 'Hide Examples ↑';
+        });
+
+        // Initialize
+        generateName();
+    </script>
+</body>
+</html>
