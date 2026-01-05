@@ -2,7 +2,7 @@
 
 A standardized approach to naming GitHub repositories for improved organization, discoverability, and consistency across projects.
 
-[![Standard](https://img.shields.io/badge/standard-v1.0-blue.svg)](https://github.com/your-username/docs-repository-naming-convention)
+[![Standard](https://img.shields.io/badge/standard-v1.0-blue.svg)](https://github.com/reslava/docs-repository-naming-convention) [![Naming Convention](https://img.shields.io/badge/naming-compliant-green.svg)](https://github.com/reslava/docs-repository-naming-convention)
 
 ## 📌 Naming Format
 
