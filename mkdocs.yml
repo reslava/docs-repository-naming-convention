@@ -8,7 +8,7 @@ theme:
     - navigation.expand
     - toc.integrate
 nav:
-  - Home: index.md
+  - Home: docs/index.md
   # The rest of the navigation will be generated automatically
 plugins:
   - search
