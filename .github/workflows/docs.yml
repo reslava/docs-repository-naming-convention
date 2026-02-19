@@ -26,10 +26,10 @@ jobs:
           
       - name: Download and Install mdsplit
         run: |
-          # Download the Linux executable directly
-          wget https://github.com/alandefreitas/mdsplit/releases/download/v0.1.1/mdsplit-linux
-          chmod +x mdsplit-linux
-          sudo mv mdsplit-linux /usr/local/bin/mdsplit            
+          # Download the Linux executable with correct name
+          wget https://github.com/alandefreitas/mdsplit/releases/download/v0.1.1/mdsplit-linux-amd64
+          chmod +x mdsplit-linux-amd64
+          sudo mv mdsplit-linux-amd64 /usr/local/bin/mdsplit         
 
       - name: Split README.md with mdsplit
         run: mdsplit -r ${{ github.repository }} -o docs
