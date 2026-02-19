@@ -286,7 +286,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 - [ ] Release v1.0 of the convention
 - ✅ Build web-based name generator tool
 - [ ] Create GitHub Action validator
-- [ ] Publish npm package for CLI validation
 - [ ] Develop VS Code extension
 - [ ] Translate docs to Spanish, French, German, Japanese
 - [ ] Partner with 10+ open source projects
