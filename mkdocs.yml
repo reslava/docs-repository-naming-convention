@@ -1,0 +1,23 @@
+site_name: Your Project Name  # Replace with your project's name
+repo_url: <https://github.com/reslava/docs-repository-naming-convention> # Replace with your repo URL
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - toc.integrate
+nav:
+  - Home: index.md
+  # The rest of the navigation will be generated automatically
+plugins:
+  - search
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.details
+  - admonition
+  - toc:
+      permalink: true
