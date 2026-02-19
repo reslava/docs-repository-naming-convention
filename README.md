@@ -1,4 +1,4 @@
-# Repository Naming Convention with MkDocs mdsplit index-html and /docs
+# Repository Naming Convention
 
 A standardized approach to naming GitHub repositories for improved organization, discoverability, and consistency across projects.
 
