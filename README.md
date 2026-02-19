@@ -1,4 +1,4 @@
-# Repository Naming Convention MkDocs
+# Repository Naming Convention with MkDocs
 
 A standardized approach to naming GitHub repositories for improved organization, discoverability, and consistency across projects.
 
