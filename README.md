@@ -319,7 +319,7 @@ This convention is licensed under a
 
 ## Acknowledgments
 
-Inspired by best practices from the .NET, Node.js, Python, and Go communities. Special thanks to early adopters and contributors who help shape this standard.
+Inspired by best practices from the .NET, Node.js, Python, and Go communities. Special thanks to early adopters and contributors who help shape this standard. Test
 
 
 ---
