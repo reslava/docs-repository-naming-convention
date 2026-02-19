@@ -23,12 +23,13 @@ jobs:
         run: |
           pip install mkdocs-material
           pip install mkdocs-minify-plugin      
-
+          
       - name: Download and Install mdsplit
         run: |
-          wget https://github.com/alandefreitas/mdsplit/releases/latest/download/mdsplit-latest-linux.tar.gz
-          tar -xzf mdsplit-latest-linux.tar.gz
-          sudo cp mdsplit /usr/local/bin/          
+          # Download the Linux executable directly
+          wget https://github.com/alandefreitas/mdsplit/releases/download/v0.1.1/mdsplit-linux
+          chmod +x mdsplit-linux
+          sudo mv mdsplit-linux /usr/local/bin/mdsplit            
 
       - name: Split README.md with mdsplit
         run: mdsplit -r ${{ github.repository }} -o docs
