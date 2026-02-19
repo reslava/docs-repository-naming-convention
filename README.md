@@ -1,4 +1,4 @@
-# Repository Naming Convention with MkDocs
+# Repository Naming Convention with MkDocs mdsplit
 
 A standardized approach to naming GitHub repositories for improved organization, discoverability, and consistency across projects.
 
