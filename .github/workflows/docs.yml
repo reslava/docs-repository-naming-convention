@@ -1,0 +1,44 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    paths:
+      - 'README.md'  # Only run when README.md changes
+    branches:
+      - main        # Or 'master', whichever is your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs and Theme
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-minify-plugin
+
+      - name: Download and Install mdsplit
+        run: |
+          # Download the latest release of mdsplit for Linux
+          wget <https://github.com/alandefreitas/mdsplit/releases/latest/download/mdsplit-latest-linux.tar.gz>
+          tar -xzf mdsplit-latest-linux.tar.gz
+          sudo cp mdsplit /usr/local/bin/
+
+      - name: Split README.md with mdsplit
+        run: mdsplit -r ${{ github.repository }} -o docs
+
+      - name: Build MkDocs Site
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
