@@ -1,5 +1,5 @@
-site_name: Your Project Name  # Replace with your project's name
-repo_url: <https://github.com/reslava/docs-repository-naming-convention> # Replace with your repo URL
+site_name: Repository naming convention  # Replace with your project's name
+repo_url: https://github.com/reslava/docs-repository-naming-convention # Replace with your repo URL
 theme:
   name: material
   features:
