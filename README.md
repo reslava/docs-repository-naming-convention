@@ -5,6 +5,7 @@ A standardized approach to naming GitHub repositories for improved organization,
 [![Standard](https://img.shields.io/badge/standard-v1.0-blue.svg)](https://github.com/reslava/docs-repository-naming-convention)
 [![Naming Convention](https://img.shields.io/badge/naming-compliant-green.svg)](https://github.com/reslava/docs-repository-naming-convention)
 [![Generator](https://img.shields.io/badge/🚀-Try_the_Generator-success.svg)](https://your-username.github.io/docs-repository-naming-convention/)
+[![Documentation](https://img.shields.io/badge/label-message-color)](https://reslava.github.io/docs-repository-naming-convention)
 
 ## 🚀 Try the Interactive Generator
 
