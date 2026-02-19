@@ -25,8 +25,7 @@ jobs:
           pip install mkdocs-minify-plugin
 
       - name: Download and Install mdsplit
-        run: |
-          # Download the latest release of mdsplit for Linux
+        run: |          
           wget <https://github.com/alandefreitas/mdsplit/releases/latest/download/mdsplit-latest-linux.tar.gz>
           tar -xzf mdsplit-latest-linux.tar.gz
           sudo cp mdsplit /usr/local/bin/
